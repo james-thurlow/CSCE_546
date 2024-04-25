@@ -45,14 +45,18 @@ class NewWorkout : AppCompatActivity() {
                 .addOnSuccessListener { aVoid: Void? ->
                     Toast.makeText(
                         this@NewWorkout,
-                        "Journal Created",
+
+                        "Workout Created",
+
                         Toast.LENGTH_SHORT
                     ).show()
                 }
                 .addOnFailureListener { e: Exception ->
                     Toast.makeText(
                         this@NewWorkout,
-                        "Failed to create journal" + e.message,
+
+                        "Failed to create workout" + e.message,
+
                         Toast.LENGTH_SHORT
                     ).show()
                 }

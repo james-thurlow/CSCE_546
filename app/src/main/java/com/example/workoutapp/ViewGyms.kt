@@ -1,6 +1,7 @@
 package com.example.workoutapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,21 +9,20 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
-
+import com.example.workoutapp.NewWorkout
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class ViewUserWorkouts : AppCompatActivity(), RecyclerViewInterface {
+class ViewGyms : AppCompatActivity(), RecyclerViewInterface {
     var back: Button? = null
     var newWorkout: Button? = null
     private var databaseReference: DatabaseReference? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.view_user_workouts)
+        setContentView(R.layout.new_gyms)
         back = findViewById(R.id.back)
         newWorkout = findViewById(R.id.newWorkout)
         val recycler = findViewById<RecyclerView>(R.id.workoutRecycler)
@@ -31,7 +31,7 @@ class ViewUserWorkouts : AppCompatActivity(), RecyclerViewInterface {
         workoutAdapter = WorkoutAdapter(this, workouts, this)
         recycler.setAdapter(workoutAdapter)
         databaseReference = FirebaseDatabase.getInstance().getReference()
-        databaseReference!!.child("UserWorkouts")
+        databaseReference!!.child("GymInfo")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 //Updating the recycler view when new workouts are added.
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -59,14 +59,14 @@ class ViewUserWorkouts : AppCompatActivity(), RecyclerViewInterface {
         newWorkout?.setOnClickListener(View.OnClickListener {
             val blankTitle = "blankTitle"
             val blankContent = "blankContent"
-            val intent = Intent(this@ViewUserWorkouts, NewWorkout::class.java)
+            val intent = Intent(this@ViewGyms, NewWorkout::class.java)
             intent.putExtra("TITLE", blankTitle)
             intent.putExtra("CONTENT", blankContent)
             startActivity(intent)
             finish()
         })
         back?.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this@ViewUserWorkouts, HomeScreen::class.java)
+            val intent = Intent(this@ViewGyms, HomeScreen::class.java)
             startActivity(intent)
             finish()
         })
@@ -74,10 +74,13 @@ class ViewUserWorkouts : AppCompatActivity(), RecyclerViewInterface {
 
     override fun onItemClick(position: Int) {
         //this code is activated when a workout is selected from the list
-        val view = Intent(this@ViewUserWorkouts, ViewUserWorkout::class.java)
-        view.putExtra("TITLE", workouts[position].title)
-        view.putExtra("CONTENT", workouts[position].content)
-        startActivity(view)
+        val selectedWorkout = workouts[position]
+        val phoneNumber = selectedWorkout.content
+
+        // Create intent to initiate phone call
+        val intent = Intent(Intent.ACTION_DIAL)
+        intent.setData(Uri.parse("tel:$phoneNumber"))
+        startActivity(intent)
     }
 
     companion object {
