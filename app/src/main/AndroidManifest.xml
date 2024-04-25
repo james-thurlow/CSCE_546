@@ -18,6 +18,10 @@
             android:exported="true"
             android:screenOrientation="portrait"/>
         <activity
+            android:name=".ViewGyms"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".ViewGenericWorkouts"
             android:exported="true"
             android:screenOrientation="portrait"/>
