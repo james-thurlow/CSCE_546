@@ -32,10 +32,12 @@ class HomeScreen : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
         hardware.setOnClickListener {
             val intent = Intent(this@HomeScreen, ViewGyms::class.java)
             startActivity(intent)
             finish()
         }
+
     }
 }
