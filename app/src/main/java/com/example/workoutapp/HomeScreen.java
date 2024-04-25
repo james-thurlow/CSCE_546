@@ -20,7 +20,6 @@ public class HomeScreen extends AppCompatActivity {
         Button viewWorkout = findViewById(R.id.addWorkout);
         Button todayWorkout = findViewById(R.id.todayWorkout);
         Button hardware = findViewById(R.id.hardware);
-        //Button back = findViewById(R.id.back);
         Button newWorkout = findViewById(R.id.newWorkout);
 
         newWorkout.setOnClickListener(new View.OnClickListener(){

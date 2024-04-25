@@ -1,6 +1,5 @@
 package com.example.workoutapp;
 
-import java.util.ArrayList;
 
 public class Workout {
     String title;
