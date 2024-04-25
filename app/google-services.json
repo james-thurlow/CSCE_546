@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "205113533667",
+    "project_id": "final-de28a",
+    "storage_bucket": "final-de28a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205113533667:android:8c514545830833b33351d6",
+        "android_client_info": {
+          "package_name": "com.example.workoutapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBvMpw8hv_PuuP1JrxDWXUs6lqi0ulDBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
