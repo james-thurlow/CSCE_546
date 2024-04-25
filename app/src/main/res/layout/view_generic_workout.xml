@@ -16,50 +16,50 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/save"
+        android:id="@+id/use"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Save"
+        android:text="use"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/title"
-        android:layout_width="263dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="228dp"
-        android:ems="10"
-        android:hint="Title"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/content"
-        android:layout_width="270dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="375dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Content..."
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="294dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="200dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/content"
+        android:layout_width="291dp"
+        android:layout_height="396dp"
+        android:layout_marginTop="272dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:text="Today's Workout"
+        android:layout_marginTop="120dp"
         android:textColor="@color/black"
         android:textSize="35sp"
+        android:text="Suggested Plan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

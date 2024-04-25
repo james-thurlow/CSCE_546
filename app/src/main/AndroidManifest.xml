@@ -18,11 +18,19 @@
             android:exported="true"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".ViewWorkout"
+            android:name=".ViewGenericWorkouts"
             android:exported="true"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".ViewAllWorkouts"
+            android:name=".ViewGenericWorkout"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ViewUserWorkouts"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ViewUserWorkout"
             android:exported="true"
             android:screenOrientation="portrait"/>
         <activity
